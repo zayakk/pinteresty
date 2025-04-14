@@ -1,5 +1,5 @@
 
-import { Bell, Home, Message, PlusCircle, Search, User } from "lucide-react";
+import { Bell, Home, MessageCircle, PlusCircle, Search, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -52,7 +52,7 @@ const Header = () => {
                 <Bell className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="icon">
-                <Message className="h-5 w-5" />
+                <MessageCircle className="h-5 w-5" />
               </Button>
             </>
           )}
