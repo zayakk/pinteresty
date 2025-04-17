@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Header from "@/components/Header";
 import MasonryGrid from "@/components/MasonryGrid";
@@ -16,7 +15,7 @@ const Index = () => {
 
   const handleCloseModal = () => {
     setSelectedPin(null);
-    // Remove pin ID from URL if it exists
+    // Хэрэв URL дээр pin ID байгаа бол түүнийг цэвэрлэнэ
     if (pinId) {
       navigate("/", { replace: true });
     }

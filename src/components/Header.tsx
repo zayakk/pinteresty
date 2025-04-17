@@ -13,7 +13,7 @@ const Header = () => {
     <header className="sticky top-0 z-10 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 py-2 px-4">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         <Link to="/" className="flex items-center">
-          <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-light to-pink-DEFAULT flex items-center justify-center">
+          <div className="h-10 w-10 rounded-full bg-purple-light pink-DEFAULT flex items-center justify-center">
             <span className="text-white font-bold text-lg">P</span>
           </div>
           {!isMobile && (
@@ -46,7 +46,7 @@ const Header = () => {
             </Link>
           </Button>
 
-          {!isMobile && (
+          {/* {!isMobile && (
             <>
               <Button variant="ghost" size="icon">
                 <Bell className="h-5 w-5" />
@@ -55,7 +55,7 @@ const Header = () => {
                 <MessageCircle className="h-5 w-5" />
               </Button>
             </>
-          )}
+          )} */}
 
           <Button
             variant="ghost"

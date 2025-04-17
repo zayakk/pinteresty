@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,14 +13,12 @@ const Auth = () => {
   
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, we'd handle login here
-    console.log("Login with:", { loginEmail, loginPassword });
+    console.log("Нэвтрэх мэдээлэл:", { loginEmail, loginPassword });
   };
   
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, we'd handle registration here
-    console.log("Register with:", { registerEmail, registerPassword, registerUsername });
+    console.log("Бүртгүүлэх мэдээлэл:", { registerEmail, registerPassword, registerUsername });
   };
   
   return (
@@ -34,13 +31,13 @@ const Auth = () => {
         </div>
         
         <h1 className="text-2xl font-bold text-center mb-8 bg-gradient-to-r from-purple-DEFAULT to-pink-DEFAULT bg-clip-text text-transparent">
-          Welcome to PinPurple
+          PinPurple-д тавтай морил
         </h1>
         
         <Tabs defaultValue="login" className="w-full">
           <TabsList className="w-full mb-6">
-            <TabsTrigger value="login" className="flex-1">Login</TabsTrigger>
-            <TabsTrigger value="register" className="flex-1">Register</TabsTrigger>
+            <TabsTrigger value="login" className="flex-1">Нэвтрэх</TabsTrigger>
+            <TabsTrigger value="register" className="flex-1">Бүртгүүлэх</TabsTrigger>
           </TabsList>
           
           <TabsContent value="login">
@@ -48,7 +45,7 @@ const Auth = () => {
               <div>
                 <Input
                   type="email"
-                  placeholder="Email"
+                  placeholder="И-мэйл"
                   value={loginEmail}
                   onChange={(e) => setLoginEmail(e.target.value)}
                   required
@@ -59,7 +56,7 @@ const Auth = () => {
               <div>
                 <Input
                   type="password"
-                  placeholder="Password"
+                  placeholder="Нууц үг"
                   value={loginPassword}
                   onChange={(e) => setLoginPassword(e.target.value)}
                   required
@@ -69,15 +66,15 @@ const Auth = () => {
               
               <div className="text-right">
                 <a href="#" className="text-sm text-purple-DEFAULT hover:text-purple-dark">
-                  Forgot password?
+                  Нууц үгээ мартсан уу?
                 </a>
               </div>
               
               <Button 
                 type="submit" 
-                className="w-full bg-gradient-bg text-white"
+                className="w-full text-white"
               >
-                Log in
+                Нэвтрэх
               </Button>
             </form>
           </TabsContent>
@@ -87,7 +84,7 @@ const Auth = () => {
               <div>
                 <Input
                   type="text"
-                  placeholder="Username"
+                  placeholder="Хэрэглэгчийн нэр"
                   value={registerUsername}
                   onChange={(e) => setRegisterUsername(e.target.value)}
                   required
@@ -98,7 +95,7 @@ const Auth = () => {
               <div>
                 <Input
                   type="email"
-                  placeholder="Email"
+                  placeholder="И-мэйл"
                   value={registerEmail}
                   onChange={(e) => setRegisterEmail(e.target.value)}
                   required
@@ -109,7 +106,7 @@ const Auth = () => {
               <div>
                 <Input
                   type="password"
-                  placeholder="Password"
+                  placeholder="Нууц үг"
                   value={registerPassword}
                   onChange={(e) => setRegisterPassword(e.target.value)}
                   required
@@ -119,9 +116,9 @@ const Auth = () => {
               
               <Button 
                 type="submit" 
-                className="w-full bg-gradient-bg text-white"
+                className="w-full text-white"
               >
-                Create account
+                Бүртгүүлэх
               </Button>
             </form>
           </TabsContent>
@@ -129,13 +126,13 @@ const Auth = () => {
         
         <div className="mt-6 text-center">
           <Link to="/" className="text-sm text-gray-500 hover:text-purple-DEFAULT">
-            Continue as guest
+            Зочиноор үргэлжлүүлэх
           </Link>
         </div>
         
         <div className="mt-8 text-xs text-center text-gray-500">
-          By continuing, you agree to PinPurple's Terms of Service and acknowledge 
-          you've read our Privacy Policy.
+          Үргэлжлүүлснээр та PinPurple-ийн Үйлчилгээний нөхцөлтэй санал нийлж, 
+          Хувийн нууцлалын бодлогыг уншсан гэдгээ зөвшөөрч байна.
         </div>
       </div>
     </div>
