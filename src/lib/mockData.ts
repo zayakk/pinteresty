@@ -6,7 +6,7 @@ export const currentUser: User = {
   username: 'Zayakkaa',
   avatar: 'https://i.pinimg.com/736x/42/dd/df/42dddf534ba4a77e12fe93e164d9f065.jpg',
   bio: 'Zaya,s pink aesthetic pink pinterest',
-  followersCount: 1243,
+  followersCount: 17247,
   followingCount: 17,
 };
 
