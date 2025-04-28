@@ -1,5 +1,11 @@
-
-import { Bell, Home, MessageCircle, PlusCircle, Search, User } from "lucide-react";
+import {
+  Bell,
+  Home,
+  MessageCircle,
+  PlusCircle,
+  Search,
+  User,
+} from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -46,17 +52,6 @@ const Header = () => {
             </Link>
           </Button>
 
-          {/* {!isMobile && (
-            <>
-              <Button variant="ghost" size="icon">
-                <Bell className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <MessageCircle className="h-5 w-5" />
-              </Button>
-            </>
-          )} */}
-
           <Button
             variant="ghost"
             size="icon"
@@ -70,19 +65,16 @@ const Header = () => {
             </Link>
           </Button>
 
-          <Button variant="ghost" size="icon">
-            <PlusCircle className="h-5 w-5" />
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className={location.pathname === "/auht" ? "text-pink-DEFAULT" : ""}
+          >
+            <Link to="/auth">
+              <PlusCircle className="h-5 w-5" />
+            </Link>
           </Button>
-
-          {isMobile && (
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-            >
-              <Search className="h-5 w-5" />
-            </Button>
-          )}
         </div>
       </div>
     </header>
