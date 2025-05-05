@@ -1,4 +1,3 @@
-
 export interface User {
   id: string;
   username: string;
@@ -8,15 +7,24 @@ export interface User {
   followingCount: number;
 }
 
+// export interface Pin {
+//   id: string;
+//   title: string;
+//   description?: string;
+//   imageurl: string;
+//   aspectRatio: number;
+//   createdAt: string;
+//   savesCount: number;
+//   commentsCount: number;
+//   userId: string;
+//   user?: User;
+// }
 export interface Pin {
-  id: string;
+  pinId: number;
+  userId: number;
   title: string;
-  description?: string;
-  imageUrl: string;
-  aspectRatio: number;
-  createdAt: string;
-  savesCount: number;
-  commentsCount: number;
-  userId: string;
-  user?: User;
+  imageurl: string;
+  description: string;
+  category: string;
+  created_at: null;
 }

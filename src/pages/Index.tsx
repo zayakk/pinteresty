@@ -6,6 +6,7 @@ import { pins } from "@/lib/mockData";
 import { Pin } from "@/types";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { fetchData, ResponseInterface } from "../utils/needful";
 
 const API_URL = "http://127.0.0.1:8000/apipinterest/";
 
@@ -19,6 +20,7 @@ const Index = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [response, setResponse] = useState([]);
 
   const fetchEvent = async () => {
     try {
@@ -37,9 +39,28 @@ const Index = () => {
     }
   };
 
+  const fetchList = async () => {
+    try {
+      const data = await fetchData({
+        url: "http://127.0.0.1:8000/apipinterest/",
+        // url: "http://issw.mandakh.org/apihabit/",
+        method: "POST",
+        body: { action: "getallpin" },
+      });
+      setResponse(data.data);
+      console.log(data.data);
+    } catch (err: any) {
+      setError(err.message || "Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     setLoading(true);
     fetchEvent();
+    setLoading(true);
+    fetchList();
   }, []);
 
   const handleCloseModal = () => {
@@ -54,7 +75,7 @@ const Index = () => {
       <Header />
 
       <main className="pt-6 pb-20 px-2 md:px-6 max-w-7xl mx-auto">
-        <MasonryGrid pins={pins} />
+        <MasonryGrid pins={response} />
       </main>
 
       <PinModal
