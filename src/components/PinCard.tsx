@@ -9,7 +9,7 @@ interface PinCardProps {
 }
 
 const PinCard = ({ pin }: PinCardProps) => {
-  const { id, title, imageurl, aspectRatio, savesCount, user } = pin;
+  const { pinId, title, imageurl, aspectRatio, savesCount, user } = pin;
 
   return (
     <div
@@ -20,7 +20,7 @@ const PinCard = ({ pin }: PinCardProps) => {
       }}
     >
       <div className="relative group">
-        <Link to={`/pin/${id}`}>
+        <Link to={`/pin/${pinId}`}>
           <img
             src={imageurl}
             alt={title}
