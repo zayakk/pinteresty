@@ -12,11 +12,11 @@ export interface User {
 //   title: string;
 //   description?: string;
 //   imageurl: string;
-//   aspectRatio: number;
 //   createdAt: string;
 //   savesCount: number;
 //   commentsCount: number;
 //   userId: string;
+// description: string;
 //   user?: User;
 // }
 export interface Pin {
@@ -27,4 +27,6 @@ export interface Pin {
   description: string;
   category: string;
   created_at: null;
+  aspectRatio: number;
+  savesCount: number;
 }
